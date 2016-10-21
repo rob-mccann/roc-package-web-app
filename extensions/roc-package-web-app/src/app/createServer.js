@@ -45,7 +45,7 @@ export default function createServer(options = {}, beforeUserMiddlewares = [], {
 
     if (useDefaultKoaMiddlewares) {
         // eslint-disable-next-line
-        const middlewares = require('./middlewares').default(runtimeSettings, { dev, dist });
+        const middlewares = require('./middlewares').default(runtimeSettings, server);
         middlewares.forEach((middleware) => server.use(middleware));
     }
 
